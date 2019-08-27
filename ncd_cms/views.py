@@ -36,8 +36,6 @@ class LoginPageView(View):
             #     return HttpResponseRedirect(request.GET.get('next'))
             if request.user.is_superuser:
                 return HttpResponseRedirect(reverse('index'))
-            else:
-                return HttpResponseRedirect(reverse('index'))
         return render(request, 'auth/login.html', {'error': True})
 
 
