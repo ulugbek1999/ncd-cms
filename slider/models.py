@@ -5,6 +5,7 @@ class Slider(models.Model):
     title_uz = models.TextField(blank=True, default='')
     title_en = models.TextField(blank=True, default='')
     title_ru = models.TextField(blank=True, default='')
+    title_kz = models.TextField(blank=True, default='')
     image = models.ImageField(blank=True, upload_to='cms/slider/')
     status = models.BooleanField(default=True)
 
@@ -13,4 +14,4 @@ class Slider(models.Model):
         ordering = ('-id',)
 
     def __str__(self):
-        return self.title_ru or self.title_en or self.title_uz or 'asd'
+        return self.title_ru or self.title_en or self.title_uz or self.title_kz or 'asd'

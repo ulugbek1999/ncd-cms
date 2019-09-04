@@ -9,9 +9,11 @@ class PartnerSerializer(ModelSerializer):
             'title_uz',
             'title_ru',
             'title_en',
+            'title_kz',
             'content_uz',
             'content_ru',
             'content_en',
+            'content_kz',
             'image',
             'status',
         )

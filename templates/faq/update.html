@@ -20,6 +20,7 @@
                                 <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Русский</span></a> </li>
                                 <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">English</span></a> </li>
                                 <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Узбекча</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#kazakh" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Қазақша</span></a> </li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content tabcontent-border">
@@ -90,6 +91,29 @@
                                             </div>
                                             <div class="col-md-9">
                                                 <textarea type="text" id="content_uz" class="moxiecut form-control" name="content_uz">{{ faq.answer_uz }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane p-20" id="kazakh" role="tabpanel">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-3 text-right">
+                                                <label for="title_kz" class="control-label">Загаловок (kz)</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" id="title_kz" class="form-control" name="title_kz" placeholder="" autocomplete="off" value="{{ faq.question_kz }}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-3 text-right">
+                                                <label for="content_kz" class="control-label">Полное содержание (kz)</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <textarea type="text" id="content_kz" class="moxiecut form-control" name="content_kz">{{ faq.answer_kz }}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -186,6 +210,7 @@
                 var contentRu = tinymce.get('content_ru').getContent();
                 var contentEn = tinymce.get('content_en').getContent();
                 var contentUz = tinymce.get('content_uz').getContent();
+                var contentKz = tinymce.get('content_kz').getContent();
 
                 let formData = new FormData();
 
@@ -195,6 +220,8 @@
                 formData.append('answer_en', contentEn);
                 formData.append('question_uz', $('input[name="title_uz"]').val());
                 formData.append('answer_uz', contentUz);
+                formData.append('question_kz', $('input[name="title_kz"]').val())
+                formData.append('answer_kz', $('input[name="answer_kz"]').val())
 
                 formData.append('category', $('select[name="category"]').val());
                 formData.append('status', $('select[name="status"]').val());

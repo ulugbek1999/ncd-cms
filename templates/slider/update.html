@@ -63,6 +63,18 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="tab-pane p-20" id="kazakh" role="tabpanel">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-3 text-right">
+                                                <label for="title_kz" class="control-label">Загаловок (kz)</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" id="title_kz" class="form-control" name="title_kz" placeholder="" autocomplete="off" value="{{slider.title_kz}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="p-20">
                                 <div class="form-group">
@@ -160,6 +172,7 @@
                 formData.append('title_ru', $('input[name="title_ru"]').val());
                 formData.append('title_en', $('input[name="title_en"]').val());
                 formData.append('title_uz', $('input[name="title_uz"]').val());
+                formData.append('title_kz', $('input[name="title_kz"]').val());
 
                 formData.append('status', $('select[name="status"]').val());
 

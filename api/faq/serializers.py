@@ -9,9 +9,11 @@ class FaqSerializer(ModelSerializer):
             'question_uz',
             'question_ru',
             'question_en',
+            'question_kz',
             'answer_uz',
             'answer_ru',
             'answer_en',
+            'answer_kz',
             'status',
             )
 
@@ -37,5 +39,6 @@ class FaqCategorySerializer(ModelSerializer):
             'name_uz',
             'name_ru',
             'name_en',
+            'name_kz',
             'status',
             )

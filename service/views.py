@@ -1,5 +1,4 @@
-from django.urls import reverse
-from django.views.generic import TemplateView, ListView, View, DetailView
+from django.views.generic import TemplateView, ListView, DetailView
 from .models import Service
 from django.contrib.auth.mixins import LoginRequiredMixin
 

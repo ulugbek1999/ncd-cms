@@ -9,6 +9,7 @@ class SliderSerializer(ModelSerializer):
             'title_uz',
             'title_ru',
             'title_en',
+            'title_kz',
             'image',
             'status',
         )
