@@ -91,7 +91,7 @@ class VacancyUpdateView(APIView):
         vacancy.short_description_en = request.data.get("short_content_en")
         vacancy.short_description_uz = request.data.get("short_content_uz")
         vacancy.short_description_ru = request.data.get("short_content_ru")
-        vacancy.short_description_kz = request.data.get("short_description_kz")
+        vacancy.short_description_kz = request.data.get("short_content_kz")
         vacancy.description_en = request.data.get("content_en")
         vacancy.description_uz = request.data.get("content_uz")
         vacancy.description_ru = request.data.get("content_ru")
