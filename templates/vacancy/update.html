@@ -31,7 +31,7 @@
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-md-3 text-right">
-                                                    <label for="title_ru" class="control-label">Загаловок (ru)</label>
+                                                    <label for="title_ru" class="control-label">Заголовок (ru)</label>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <input type="text" id="title_ru" class="form-control" name="title_ru" placeholder="" value="{{ vacancy.title_ru }}" autocomplete="off">
@@ -84,7 +84,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-3 text-right">
-                                                <label for="title_en" class="control-label">Загаловок (en)</label>
+                                                <label for="title_en" class="control-label">Заголовок (en)</label>
                                             </div>
                                             <div class="col-md-9">
                                                 <input type="text" value="{{ vacancy.title_en }}" id="title_en" class="form-control" name="title_en" placeholder="" autocomplete="off">
@@ -136,7 +136,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-3 text-right">
-                                                <label for="title_uz" class="control-label">Загаловок (uz)</label>
+                                                <label for="title_uz" class="control-label">Заголовок (uz)</label>
                                             </div>
                                             <div class="col-md-9">
                                                 <input type="text" value="{{ vacancy.title_uz }}" id="title_uz" class="form-control" name="title_uz" placeholder="" autocomplete="off">
@@ -186,7 +186,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-3 text-right">
-                                                <label for="title_kz" class="control-label">Загаловок (kz)</label>
+                                                <label for="title_kz" class="control-label">Заголовок (kz)</label>
                                             </div>
                                             <div class="col-md-9">
                                                 <input type="text" value="{{ vacancy.title_kz }}" id="title_kz" class="form-control" name="title_kz" placeholder="" autocomplete="off">
@@ -416,6 +416,9 @@
                 formData.append('title_uz', $('input[name="title_uz"]').val());
                 formData.append('short_content_uz', shortContentUz);
                 formData.append('content_uz', contentUz);
+                formData.append('title_kz', $('input[name="title_kz"]').val());
+                formData.append('short_content_kz', shortContentKz);
+                formData.append('content_kz', contentKz);
                 formData.append('location_uz', $('input[name="location_uz"').val())
                 formData.append('location_en', $('input[name="location_en"').val())
                 formData.append('location_ru', $('input[name="location_ru"').val())
