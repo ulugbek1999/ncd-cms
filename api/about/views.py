@@ -1,6 +1,5 @@
-from rest_framework.generics import CreateAPIView, UpdateAPIView, DestroyAPIView
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from rest_framework.generics import CreateAPIView, UpdateAPIView
+from rest_framework.generics import DestroyAPIView
 from about.models import About
 from .serializers import AboutSerializer
 

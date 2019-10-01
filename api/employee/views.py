@@ -1,4 +1,5 @@
-from rest_framework.generics import CreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import CreateAPIView, UpdateAPIView
+from rest_framework.generics import DestroyAPIView, ListAPIView
 from employee.models import Employee
 from .serializers import EmployeeSerializer
 

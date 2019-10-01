@@ -33,6 +33,8 @@ class FaqSerializer(ModelSerializer):
 
 
 class FaqCategorySerializer(ModelSerializer):
+    faq = FaqSerializer(many=True, read_only=True)
+
     class Meta:
         model = FaqCategory
         fields = (
@@ -41,4 +43,5 @@ class FaqCategorySerializer(ModelSerializer):
             'name_en',
             'name_kz',
             'status',
-            )
+            'faq'
+        )

@@ -1,4 +1,4 @@
-from rest_framework.generics import CreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import CreateAPIView, UpdateAPIView, DestroyAPIView, ListAPIView
 from slider.models import Slider
 from .serializers import SliderSerializer
 
@@ -17,3 +17,8 @@ class SliderUpdate(UpdateAPIView):
 class SliderDelete(DestroyAPIView):
     queryset = Slider.objects.all()
     lookup_url_kwarg = 'id'
+
+
+class SliderList(ListAPIView):
+    queryset = Slider.objects.all()
+    serializer_class = SliderSerializer

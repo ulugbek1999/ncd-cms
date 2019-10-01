@@ -15,7 +15,12 @@ class AdsBlock(models.Model):
 
 class AdsBlockImage(models.Model):
     image = models.FileField(upload_to='cms/ads/', blank=True)
-    block = models.ForeignKey(AdsBlock, on_delete=models.CASCADE, blank=True)
+    block = models.ForeignKey(
+                        AdsBlock,
+                        on_delete=models.CASCADE,
+                        blank=True,
+                        related_name="block_image"
+                    )
 
     class Meta:
         db_table = 'cms_ads_block_images'

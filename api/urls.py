@@ -1,4 +1,5 @@
 from django.urls import path, include
+from api.views import CMSListView
 
 urlpatterns = [
     path('about/', include('api.about.urls')),
@@ -13,5 +14,6 @@ urlpatterns = [
     path('edu/', include('api.edu.urls')),
     path('profile/', include('api.profile.urls')),
     path('ads/', include('api.ads.urls')),
-    path('vacancy/', include('api.vacancy.urls'))
+    path('vacancy/', include('api.vacancy.urls')),
+    path('cms/list/', CMSListView.as_view(), name="cms-list"),
 ]

@@ -1,6 +1,7 @@
 from django.urls import path
 
-from api.slider.views import SliderCreate, SliderDelete, SliderUpdate
+from api.slider.views import SliderCreate, SliderDelete
+from api.slider.views import SliderUpdate
 
 urlpatterns = [
     path('create/', SliderCreate.as_view(), name='slider-create-api'),

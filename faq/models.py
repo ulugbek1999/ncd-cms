@@ -26,7 +26,11 @@ class Faq(models.Model):
     answer_ru = models.TextField(blank=True)
     answer_en = models.TextField(blank=True)
     answer_kz = models.TextField(blank=True)
-    category = models.ForeignKey(FaqCategory, related_name='category_of_faq', on_delete=models.CASCADE)
+    category = models.ForeignKey(
+                            FaqCategory,
+                            related_name='faq',
+                            on_delete=models.CASCADE,
+                        )
     status = models.BooleanField(default=True)
     slug = models.SlugField(max_length=50, default='', blank=True)
 

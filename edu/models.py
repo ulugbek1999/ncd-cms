@@ -25,7 +25,7 @@ class Edu(models.Model):
 
 class Document(models.Model):
     document = models.FileField(blank=True, upload_to='cms/edu/documents/')
-    edu = models.ForeignKey(Edu, on_delete=models.CASCADE)
+    edu = models.ForeignKey(Edu, on_delete=models.CASCADE, related_name="document")
 
     class Meta:
         db_table = 'cms_education_documents'

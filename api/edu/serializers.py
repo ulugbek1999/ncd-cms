@@ -2,7 +2,17 @@ from rest_framework.serializers import ModelSerializer
 from edu.models import Document, Edu
 
 
+class DocumentSerializer(ModelSerializer):
+    class Meta:
+        model = Document
+        fields = (
+            'document',
+        )
+
+
 class EduSerializer(ModelSerializer):
+    document = DocumentSerializer(many=True, read_only=True)
+
     class Meta:
         model = Edu
         fields = (
@@ -17,6 +27,7 @@ class EduSerializer(ModelSerializer):
             'content_ru',
             'status',
             'image',
+            'document',
             )
 
     def create(self, validated_data):

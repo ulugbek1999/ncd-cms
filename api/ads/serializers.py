@@ -2,13 +2,22 @@ from rest_framework.serializers import ModelSerializer
 from ads.models import AdsBlock, AdsBlockImage
 
 
+class AdsBlockImageSerializer(ModelSerializer):
+    class Meta:
+        model = AdsBlockImage
+        fields = ('image',)
+
+
 class AdsBlockSerializer(ModelSerializer):
+    block_image = AdsBlockImageSerializer(many=True, read_only=True)
+
     class Meta:
         model = AdsBlock
         fields = (
             'name',
             'size',
-            )
+            'block_image'
+        )
 
     def create(self, validated_data):
         instance = AdsBlock(**validated_data)
