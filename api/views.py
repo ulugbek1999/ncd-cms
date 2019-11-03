@@ -64,7 +64,7 @@ class CMSListView(APIView):
         partner_model = Partner.objects.all()
         partner_serializer = PartnerSerializer(partner_model, many=True)
         # Service
-        service_model = Service.objects.all()
+        service_model = Service.objects.all().filter(status=True)
         service_serializer = ServiceSerializer(service_model, many=True)
         # Vacancy
         vacancy_model = Vacancy.objects.all()
