@@ -15,6 +15,7 @@ class Service(models.Model):
     content_en = models.TextField(blank=True, default='')
     content_kz = models.TextField(blank=True, default='')
     image = models.FileField(blank=True, upload_to='cms/service/')
+    image_new = models.FileField(blank=True, upload_to='cms/service/')
     status = models.BooleanField(default=True)
     slug = models.SlugField(max_length=50, default='', blank=True)
 

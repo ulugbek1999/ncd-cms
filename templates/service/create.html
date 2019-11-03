@@ -185,6 +185,18 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="row">
+                                        <div class="col-md-3 text-right">
+                                            <label for="image_new" class="control-label">Картинка</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="file-loading">
+                                                <input id="kv-explorer-2" type="file" name="image_new">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
                                         <div class="offset-sm-3 col-md-9">
                                             <button id="createButton" type="submit" data-url="{% url 'service-create-api'%}" class="btn btn-success"> <i class="fa fa-check"></i> Сохранить</button>
                                             <button type="button" class="btn btn-inverse">Отмена</button>
@@ -255,6 +267,25 @@
                     {caption: "nature-3.jpg", size: 632762, width: "120px", url: "{$url}", key: 3}*/
                 ]
             });
+            $("#kv-explorer-2").fileinput({
+                'theme': 'explorer-fas',
+                language: 'ru',
+                fileType: "any",
+                showUpload: false,
+                showCaption: true,
+                overwriteInitial: false,
+                initialPreviewAsData: true,
+                initialPreview: [
+                    /*"http://lorempixel.com/1920/1080/nature/1",
+                    "http://lorempixel.com/1920/1080/nature/2",
+                    "http://lorempixel.com/1920/1080/nature/3"*/
+                ],
+                initialPreviewConfig: [
+                    /*{caption: "nature-1.jpg", size: 329892, width: "120px", url: "{$url}", key: 1},
+                    {caption: "nature-2.jpg", size: 872378, width: "120px", url: "{$url}", key: 2},
+                    {caption: "nature-3.jpg", size: 632762, width: "120px", url: "{$url}", key: 3}*/
+                ]
+            });
         });
     </script>
     <script>
@@ -291,6 +322,10 @@
 
                 for (let i = 0; i < $('#kv-explorer')[0].files.length; i++){
                     formData.append('image', $('#kv-explorer')[0].files[i]);
+                }
+
+                for (let i = 0; i < $('#kv-explorer-2')[0].files.length; i++){
+                    formData.append('image_new', $('#kv-explorer-2')[0].files[i]);
                 }
                 var url = $("#createButton").data("url");
                 $.ajax({

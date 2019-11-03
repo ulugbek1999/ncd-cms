@@ -19,5 +19,6 @@ class ServiceSerializer(ModelSerializer):
             'content_en',
             'content_kz',
             'image',
+            'image_new',
             'status',
         )
