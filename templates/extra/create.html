@@ -42,7 +42,7 @@
                                                     <label for="short_content_ru" class="control-label">Короткое содержание (ru)</label>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <textarea type="text" id="short_content_ru" class="moxiecut form-control" name="short_content_ru"></textarea>
+                                                    <textarea type="text" id="short_content_ru" class="form-control" name="short_content_ru"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -75,7 +75,7 @@
                                                 <label for="short_content_en" class="control-label">Короткое содержание (en)</label>
                                             </div>
                                             <div class="col-md-9">
-                                                <textarea type="text" id="short_content_en" class="moxiecut form-control" name="short_content_en"></textarea>
+                                                <textarea type="text" id="short_content_en" class="form-control" name="short_content_en"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -107,7 +107,7 @@
                                                 <label for="short_content_uz" class="control-label">Короткое содержание (uz)</label>
                                             </div>
                                             <div class="col-md-9">
-                                                <textarea type="text" id="short_content_uz" class="moxiecut form-control" name="short_content_uz"></textarea>
+                                                <textarea type="text" id="short_content_uz" class="form-control" name="short_content_uz"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -175,10 +175,6 @@
             $("#createButton").click(function (e) {
                 e.preventDefault();
 
-                var shortContentRu = tinymce.get('short_content_ru').getContent();
-                var shortContentEn = tinymce.get('short_content_en').getContent();
-                var shortContentUz = tinymce.get('short_content_uz').getContent();
-
                 var contentRu = tinymce.get('content_ru').getContent();
                 var contentEn = tinymce.get('content_en').getContent();
                 var contentUz = tinymce.get('content_uz').getContent();
@@ -186,13 +182,13 @@
                 let formData = new FormData();
 
                 formData.append('title_ru', $('input[name="title_ru"]').val());
-                formData.append('short_content_ru', shortContentRu);
+                formData.append('short_content_ru', $('input[name="short_content_ru"]').val());
                 formData.append('content_ru', contentRu);
                 formData.append('title_en', $('input[name="title_en"]').val());
-                formData.append('short_content_en', shortContentEn);
+                formData.append('short_content_en', $('input[name="short_content_en"]').val());
                 formData.append('content_en', contentEn);
                 formData.append('title_uz', $('input[name="title_uz"]').val());
-                formData.append('short_content_uz', shortContentUz);
+                formData.append('short_content_uz', $('input[name="short_content_uz"]').val());
                 formData.append('content_uz', contentUz);
 
                
