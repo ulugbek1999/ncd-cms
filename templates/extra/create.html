@@ -182,13 +182,13 @@
                 let formData = new FormData();
 
                 formData.append('title_ru', $('input[name="title_ru"]').val());
-                formData.append('short_content_ru', $('input[name="short_content_ru"]').val());
+                formData.append('short_content_ru', document.querySelector("#short_content_ru").value);
                 formData.append('content_ru', contentRu);
                 formData.append('title_en', $('input[name="title_en"]').val());
-                formData.append('short_content_en', $('input[name="short_content_en"]').val());
+                formData.append('short_content_en', document.querySelector("#short_content_en").value);
                 formData.append('content_en', contentEn);
                 formData.append('title_uz', $('input[name="title_uz"]').val());
-                formData.append('short_content_uz', $('input[name="short_content_uz"]').val());
+                formData.append('short_content_uz', document.querySelector("#short_content_uz").value);
                 formData.append('content_uz', contentUz);
 
                
