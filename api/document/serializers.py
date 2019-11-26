@@ -11,4 +11,5 @@ class DocumentSerializer(ModelSerializer):
             'name_en',
             'file',
             'status',
+            'type'
         )

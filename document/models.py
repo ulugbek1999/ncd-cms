@@ -5,6 +5,7 @@ class Document(models.Model):
     name_uz = models.TextField(blank=True, default='')
     name_ru = models.TextField(blank=True, default='')
     name_en = models.TextField(blank=True, default='')
+    type = models.CharField(max_length=20, db_column="type", default=None)
     file = models.FileField(upload_to='cms/document/', blank=True)
     status = models.BooleanField(default=True)
     slug = models.SlugField(max_length=50, default='', blank=True)
