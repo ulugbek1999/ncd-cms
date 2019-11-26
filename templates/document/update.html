@@ -184,6 +184,7 @@
                 formData.append('name_uz', $('input[name="title_uz"]').val());
 
                 formData.append('status', $('select[name="status"]').val());
+                formData.append('type', $('select[name="type"]').val());
 
                 for (let i = 0; i < $('#kv-explorer')[0].files.length; i++){
                     formData.append('file', $('#kv-explorer')[0].files[i]);
