@@ -14,6 +14,7 @@ from feedback.models import Feedback
 from partner.models import Partner
 from service.models import Service
 from vacancy.models import Vacancy
+from directory.models import Country
 # Importing serializers
 from api.slider.serializers import SliderSerializer
 from api.about.serializers import AboutSerializer
@@ -69,6 +70,14 @@ class CMSListView(APIView):
         # Vacancy
         vacancy_model = Vacancy.objects.all()
         vacancy_serializer = VacancySerializer(vacancy_model, many=True)
+        # Country
+        countries = Country.objects.all()
+        country_dict = {}
+        for country in countries:
+            country_dict[str(country.id) + "c"] = {
+                "name_en": country.name_en,
+                "name_ru": country.name_ru,
+            }
 
         # The whole data to be returned as a response
         data = {
@@ -84,5 +93,6 @@ class CMSListView(APIView):
             "partner": partner_serializer.data,
             "service": service_serializer.data,
             "vacancy": vacancy_serializer.data,
+            "countries": country_dict
         }
         return Response(data, status=status.HTTP_200_OK)

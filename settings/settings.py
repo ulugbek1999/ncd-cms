@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'extra',
     'edu',
     'ads',
-    'vacancy'
+    'vacancy',
+    'directory',
 ]
 
 MIDDLEWARE = [
