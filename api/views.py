@@ -14,7 +14,8 @@ from feedback.models import Feedback
 from partner.models import Partner
 from service.models import Service
 from vacancy.models import Vacancy
-from directory.models import Country
+from directory.models import Country, EducationType
+from directory.models import Language
 # Importing serializers
 from api.slider.serializers import SliderSerializer
 from api.about.serializers import AboutSerializer
@@ -78,6 +79,22 @@ class CMSListView(APIView):
                 "name_en": country.name_en,
                 "name_ru": country.name_ru,
             }
+        # EducationType
+        edu_types = EducationType.objects.all()
+        edu_types_dict = {}
+        for edu_type in edu_types:
+            edu_types_dict[str(edu_type.id) + "et"] = {
+                "name_en": edu_type.name_en,
+                "name_ru": edu_type.name_ru,
+            }
+        # Language
+        languages = Language.objects.all()
+        languages_dict = {}
+        for language in languages:
+            languages_dict[str(language.id) + "l"] = {
+                "name_ru": language.name_ru,
+                "name_en": language.name_en,
+            }
 
         # The whole data to be returned as a response
         data = {
@@ -93,6 +110,8 @@ class CMSListView(APIView):
             "partner": partner_serializer.data,
             "service": service_serializer.data,
             "vacancy": vacancy_serializer.data,
-            "countries": country_dict
+            "countries": country_dict,
+            "edu_types": edu_types_dict,
+            "languages": languages_dict
         }
         return Response(data, status=status.HTTP_200_OK)
